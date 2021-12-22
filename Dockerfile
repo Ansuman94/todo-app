@@ -1,8 +1,6 @@
 FROM node:current-alpine
-
-WORKDIR /app
-
-COPY . /app
+RUN mkdir -p /usr/src/app
+COPY . /usr/src/app
+WORKDIR /usr/src/app
 RUN npm install
-
-CMD ["npm", "run", "start"]
+CMD ["npm","start"]
